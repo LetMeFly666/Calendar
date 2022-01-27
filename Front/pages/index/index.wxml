@@ -1,0 +1,9 @@
+<!--pages/index/index.wxml-->
+<text>pages/index/index.wxml</text>
+<view>wx.env: `{{wsd}}`</view>
+<!-- <view wx:for="wsd">
+    <view>
+        5
+    </view>
+</view> -->
+  
