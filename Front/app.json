@@ -5,7 +5,7 @@
         "pages/logs/logs"
     ],
     "window": {
-        "backgroundTextStyle": "light",
+        "backgroundTextStyle": "dark",
         "navigationBarBackgroundColor": "#fff",
         "navigationBarTitleText": "日记",
         "navigationBarTextStyle": "black",
