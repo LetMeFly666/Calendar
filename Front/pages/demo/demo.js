@@ -2,11 +2,11 @@
  * @Author: LetMeFly
  * @Date: 2022-01-23 09:53:58
  * @LastEditors: LetMeFly
- * @LastEditTime: 2022-01-27 22:27:24
+ * @LastEditTime: 2022-01-28 22:34:30
  */
 // index.js
 // 获取应用实例
-const app = getApp()
+const app = getApp();
 
 Page({
     data: {

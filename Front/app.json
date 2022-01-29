@@ -18,10 +18,14 @@
         "list": [
             {
                 "pagePath": "pages/index/index",
+                "iconPath": "source/Img/MainPage.png",
+                "selectedIconPath": "source/Img/MainPage_Selected.png",
                 "text": "主页"
             },
             {
                 "pagePath": "pages/demo/demo",
+                "iconPath": "source/Img/Person.png",
+                "selectedIconPath": "source/Img/Person_Selected.png",
                 "text": "个人"
             }
         ]
