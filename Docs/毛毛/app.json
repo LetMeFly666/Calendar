@@ -1,0 +1,61 @@
+{
+    "pages": [
+      "pages/index/index",
+      "pages/category/category",
+      "pages/goods_list/goods_list",
+      "pages/goods_detial/goods_detial",
+      "pages/cart/cart",
+      "pages/collect/collect",
+      "pages/order/order",
+      "pages/serach/serach",
+      "pages/user/usser",
+      "pages/feedback/feedback",
+      "pages/login/login",
+      "pages/auth/auth",
+      "pages/pay/pay"
+
+    ],
+    "window": {
+      "backgroundTextStyle": "light",
+      "navigationBarBackgroundColor": "#00CDCD",
+      "navigationBarTitleText": "默默无闻的日历罢了",
+      "navigationBarTextStyle": "black"
+    },
+    "tabBar": {
+      "color": "#999",
+      "selectedColor": "#1296db",
+      "backgroundColor": "#fafafa",
+      "borderStyle": "black",
+      "list": [
+        {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "icon/home.png",
+        "selectedIconPath": "icon/home (1).png"
+      },
+
+      {
+        "pagePath": "pages/category/category",
+        "text": "分类",
+        "iconPath": "icon/fenlei.png",
+        "selectedIconPath": "icon/fenlei (1).png"
+      },
+      {
+        "pagePath": "pages/cart/cart",
+        "text": "购物车",
+        "iconPath": "icon/cart-Empty.png",
+        "selectedIconPath": "icon/cart-Empty (1).png"
+      },
+      {
+        "pagePath": "pages/user/usser",
+        "text": "个人",
+        "iconPath": "icon/bussiness-man.png",
+        "selectedIconPath": "icon/bussiness-man (1).png"
+      }
+    ]
+    },
+    "style": "v2",
+    "sitemapLocation": "sitemap.json",
+    "lazyCodeLoading": "requiredComponents"
+  }
+  
