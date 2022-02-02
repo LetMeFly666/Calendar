@@ -1,21 +1,22 @@
 //app.js
 App({
-    //onlunch,onshw://option(path,query,scene,shareTicket,referrerInfo(appId,ex))
-    onLaunch:function(options) {
+  //onLaunch,onShow: options(path,query,scene,shareTicket,referrerInfo(appId,extraData))
+  onLaunch: function(options) {
+    
+  },
+  onShow: function(options) {
 
-    },
-    onShow:function(options) {
+  },
+  onHide: function() {
 
-    },
-    onHide:function(){
+  },
+  onError: function(msg) {
 
-    },
-    onError:function(msg){
+  },
+  //options(path,query,isEntryPage)
+  onPageNotFound: function(options) {
 
-    },
-    //option(path,query,isEntryPage)
-    onPageNotFound:function(options) {
-
-    }
-
+  }
+ 
 });
+  
