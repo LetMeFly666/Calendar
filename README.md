@@ -2,7 +2,7 @@
  * @Author: LetMeFly
  * @Date: 2022-01-27 22:13:45
  * @LastEditors: LetMeFly
- * @LastEditTime: 2022-01-28 18:32:00
+ * @LastEditTime: 2022-02-02 12:25:24
 -->
 # Calendar
 
@@ -13,3 +13,8 @@
 前端代码，即在微信小程序开发工具中的那一套
 
 前端全局配置笔记：[https://letmefly.xyz/Notes/WXminiProgram/](https://letmefly.xyz/Notes/WXminiProgram/)
+
+
+## Back
+
+后端代码，即后端逻辑，采用python的django实现。

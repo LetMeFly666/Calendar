@@ -1,1 +1,1 @@
-<button bindtap="f" data-num="{{1}}" data-name="+">+</button>
+<button bindtap="f">我的日记</button>
