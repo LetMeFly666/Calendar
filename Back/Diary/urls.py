@@ -15,7 +15,16 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from django.contrib.staticfiles.views import serve
+from django.views.generic.base import RedirectView
+from Apps import views
 
 urlpatterns = [
+    path('', views.html('index.html')),
     path('admin/', admin.site.urls),
+    # path('favicon.ico/',serve, {'path': 'Static/Img/favicon.ico'}),
+    path('favicon.ico/', RedirectView.as_view(url='/Static/Img/favicon.ico')),
+    path('login/', views.login),
+    path('AddADiary/', views.add1diary), 
+    path('GetAllDiaries/', views.GetAllDiaries),
 ]

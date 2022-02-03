@@ -1,1 +1,3 @@
-<button bindtap="f">我的日记</button>
+<button type="primary" plain bindtap="GotoMyDiariesPage">我的日记</button>
+<button type="primary" plain bindtap="GotoAddDiaryPage">添加日记</button>
+<!-- <button type="primary" plain open-type="getUserInfo" bindgetuserinfo="handleGetUserInfo">登录</button> -->

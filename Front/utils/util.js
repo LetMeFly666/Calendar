@@ -2,7 +2,7 @@
  * @Author: LetMeFly
  * @Date: 2022-01-23 09:53:58
  * @LastEditors: LetMeFly
- * @LastEditTime: 2022-01-27 22:29:14
+ * @LastEditTime: 2022-02-03 21:23:47
  */
 const formatTime = date => {
     const year = date.getFullYear()
@@ -20,6 +20,17 @@ const formatNumber = n => {
     return n[1] ? n : `0${n}`
 }
 
-module.exports = {
-    formatTime
+const LetMeFly_request = (parameter) => {
+    /* 为request请求自动带上session */
+    if (!parameter.header) {
+        parameter.header = {};
+    }
+    parameter.header['cookie'] = wx.getStorageSync("sessionid");
+    wx.request(parameter);
 }
+
+module.exports = {
+    formatTime,
+    LetMeFly_request
+}
+

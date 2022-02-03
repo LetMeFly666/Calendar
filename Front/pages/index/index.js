@@ -2,17 +2,19 @@
  * @Author: LetMeFly
  * @Date: 2022-01-26 20:05:20
  * @LastEditors: LetMeFly
- * @LastEditTime: 2022-02-02 12:09:56
+ * @LastEditTime: 2022-02-03 21:46:25
  */
 Page({
-    f(e) {
-        console.log("请求");
-        wx.request({
-            url: 'https://que.letmefly.xyz/',
-            success(suc) {
-                console.log(suc);
-                console.log(suc.data);
-            }
+
+    GotoAddDiaryPage(e) {
+        wx.navigateTo({
+            url: '/pages/addDiary/addDiary',
+        })
+    },
+
+    GotoMyDiariesPage(e) {
+        wx.navigateTo({
+            url: '/pages/myDiaries/myDiaries',
         })
     }
 })

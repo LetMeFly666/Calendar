@@ -1,0 +1,6 @@
+<!--pages/myDiaries/myDiaries.wxml-->
+<text>我的日记</text>
+<view wx:for="{{diaries}}" wx:for-item="item" wx:key="*this">
+{{item}}
+<view></view>
+</view>

@@ -1,6 +1,8 @@
 {
     "pages": [
         "pages/index/index",
+        "pages/addDiary/addDiary",
+        "pages/myDiaries/myDiaries",
         "pages/demo/demo",
         "pages/logs/logs"
     ],
