@@ -2,7 +2,7 @@
 Author: LetMeFly
 Date: 2022-02-02 12:32:03
 LastEditors: LetMeFly
-LastEditTime: 2022-02-03 22:08:35
+LastEditTime: 2022-02-04 11:05:36
 '''
 from django.db import models
 
@@ -11,6 +11,7 @@ from django.db import models
 class user(models.Model):
     userid = models.CharField(verbose_name="openid", max_length=40, unique=True)
     session_key = models.CharField(verbose_name="session_key", max_length=40)
+    remark = models.CharField(verbose_name="备注", max_length=50, null=True)
 
 
 class diaries(models.Model):
