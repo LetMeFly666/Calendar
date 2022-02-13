@@ -26,5 +26,5 @@ urlpatterns = [
     path('favicon.ico/', RedirectView.as_view(url='/Static/Img/favicon.ico')),
     path('login/', views.login),
     path('AddADiary/', views.add1diary), 
-    path('GetAllDiaries/', views.GetAllDiaries),
+    path('GetAllDiaries/', views.getAllDiaries),
 ]

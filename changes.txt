@@ -1,0 +1,3 @@
+commit记录 （2022-2-13 22:51开始）
+
+1. 详细了文档Readme.md(添加了部署说明、前端函数、后端接口) 2. 为Apps.Function.User中的函数添加了注释 3. 微信开发者工具又自己改了Front/project.config.json 4. TODO: 设计一个Python函数与文档注释自动同步工具（很难的亚子） 5. 修改函数名GetAllDiaries为getAllDiaries，以保证命名的规范和统一 6. 新建了changes.txt，用来在每次commit之前做记录，也可以方便之后的查阅

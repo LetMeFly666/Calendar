@@ -2,12 +2,12 @@
 Author: LetMeFly
 Date: 2022-02-02 12:32:03
 LastEditors: LetMeFly
-LastEditTime: 2022-02-03 22:42:16
+LastEditTime: 2022-02-13 22:50:00
 '''
 from django.shortcuts import render
 from Apps.Functions.User import login
 from Apps.Functions.User import add1diary
-from Apps.Functions.User import GetAllDiaries
+from Apps.Functions.User import getAllDiaries
 
 # Create your views here.
 

@@ -2,7 +2,7 @@
 Author: LetMeFly
 Date: 2022-02-03 19:48:13
 LastEditors: LetMeFly
-LastEditTime: 2022-02-03 23:37:34
+LastEditTime: 2022-02-13 22:54:35
 '''
 import Secrets
 import requests
@@ -13,6 +13,19 @@ from django.http import JsonResponse
 
 
 def login(request):
+    """
+    登录函数，实现微信小程序的登陆功能
+    函数根据登陆请求中的code向微信服务器索要用户openid和session_key
+        openid - 每个用户独一无二，唯一不变，用来唯一标识每个用户
+        session_key - 用来“数据签名校验”、“数据加密解密”等，会过期(但此次登陆结束之前不会过期)
+
+    Parameters:
+        request - http request
+            request.GET - {"code": (wx.login -> msg) msg.code}
+    
+    Returns:
+        JsonResponse - {"code": 0}
+    """
     code = request.GET.get("code")
     response = requests.get(f"https://api.weixin.qq.com/sns/jscode2session?appid={Secrets.APP_ID}&secret={Secrets.APP_SECRET}&js_code={code}&grant_type=authorization_code")
     data = response.json()
@@ -27,13 +40,35 @@ def login(request):
 
 
 def add1diary(request):
+    """
+    添加一个日记
+
+    Parameters:
+        request - http request
+            request.session - 包含登录时保存到小程序Storage中的sessionid，由此来获取用户的userid
+            json.loads(request.body) - {"content": 要添加的日记的内容}
+
+    Returns:
+        JsonResponse - {"code": 0}
+    """
     userid = request.session.get("userid")
     content = json.loads(request.body).get("content")
     models.diaries.objects.create(userid=userid, content=content)
     return JsonResponse({"code": 0}, safe=False)
 
 
-def GetAllDiaries(request):
+def getAllDiaries(request):
+    """
+    获取所有日记
+
+    Parameters:
+        request - http request
+            request.session - 包含登录时保存到小程序Storage中的sessionid，由此来获取用户的userid
+
+    Returns:
+        JsonResponse - {"code": 0, "diaries": diaries}
+            diaries - [日记1, 日记2, 日记3, ...]
+    """
     userid = request.session.get("userid")
     result = models.diaries.objects.filter(userid=userid)
     diaries = []
