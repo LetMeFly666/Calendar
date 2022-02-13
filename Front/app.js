@@ -2,7 +2,7 @@
  * @Author: LetMeFly
  * @Date: 2022-01-23 09:53:58
  * @LastEditors: LetMeFly
- * @LastEditTime: 2022-02-03 21:29:02
+ * @LastEditTime: 2022-02-13 17:28:15
  */
 // app.js
 import { LetMeFly_request } from "./utils/util";
@@ -29,12 +29,12 @@ const LetMeFly_realLogin = () => {
                         // }
                         // console.log(getSessionid());
                         wx.setStorageSync("sessionid", msg.header["Set-Cookie"]);
-                        console.log("登陆成功！");
+                        console.log("登录成功！");
                     }
                 });
             }
             else {
-                console.log("登陆失败！" + msg.errMsg);
+                console.log("登录失败！" + msg.errMsg);
             }
         }
     });
