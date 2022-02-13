@@ -2,7 +2,7 @@
  * @Author: LetMeFly
  * @Date: 2022-01-23 09:53:58
  * @LastEditors: LetMeFly
- * @LastEditTime: 2022-02-03 21:23:47
+ * @LastEditTime: 2022-02-13 17:04:21
  */
 const formatTime = date => {
     const year = date.getFullYear()
@@ -12,12 +12,12 @@ const formatTime = date => {
     const minute = date.getMinutes()
     const second = date.getSeconds()
 
-    return `${[year, month, day].map(formatNumber).join('/')} ${[hour, minute, second].map(formatNumber).join(':')}`
-}
+    const formatNumber = n => {
+        n = n.toString()
+        return n[1] ? n : `0${n}`
+    }
 
-const formatNumber = n => {
-    n = n.toString()
-    return n[1] ? n : `0${n}`
+    return `${[year, month, day].map(formatNumber).join('-')} ${[hour, minute, second].map(formatNumber).join(':')}`
 }
 
 const LetMeFly_request = (parameter) => {
