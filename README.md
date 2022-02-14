@@ -2,7 +2,7 @@
  * @Author: LetMeFly
  * @Date: 2022-01-27 22:13:45
  * @LastEditors: LetMeFly
- * @LastEditTime: 2022-02-14 16:28:02
+ * @LastEditTime: 2022-02-14 21:07:31
 -->
 # Calendar
 
@@ -65,7 +65,7 @@
    >
    > APP_SECRET = '微信小程序的AppSecret'
    >
-   > TEMPLATE_ID = '微信消息订阅模板id'
+   > TEMPLATE_ID_DIARY_REMINDER = '微信消息订阅模板id'
 
 5. （启动mysql服务并)进行初始化```python manage.py makemigrations```、```python manage.py migrate```，之后运行即可(```python manage.py runserver```)
 
@@ -199,14 +199,51 @@ Returns:
         系统繁忙 - {"errcode": 40001, "errmsg": ...}
 ```
 
-#### sendAMessage
+#### send1Message
 
 **url：** 无
 
-**函数：** Apps.Functions.Server.sendAMessage
+**函数：** Apps.Functions.Server.send1Message
 
 ```
-TODO:
+推送一次消息给用户
+
+Parameters:
+    toWho - 用户的openid
+    templateId - 模板的template_id
+    data - 要替换的模板中的内容
+        {"date4": {"value": "2022-02-14 16:58"}, "thing1": {"value": "..."}, ...}
+
+Returns:
+    code - 状态码
+        0 - 发送成功
+        1 - 用户拒收（用户撤销了订阅 或 用户未订阅）
+        2 - 不合法的用户openid
+        -1 - 其他错误
+```
+
+
+#### send1Message_DiaryReminder
+
+**url：** 无
+
+**函数：** Apps.Functions.Server.send1Message_DiaryReminder
+
+```
+推送一次用户设置的提醒给用户
+
+Parameters:
+    toWho - 用户的openid
+    date - 提醒时间
+    content - 消息内容 （微信要求20字以内，若超过将会被截取为{{前17个字}...}）
+    jumpto - 用户点击消息卡片所跳转到的页面，默认我“我的日记页面”
+
+Returns:
+    code - 状态码
+        0 - 发送成功
+        1 - 用户拒收（用户撤销了订阅 或 用户未订阅）
+        2 - 不合法的用户openid
+        -1 - 其他错误
 ```
 
 ### 后端数据库

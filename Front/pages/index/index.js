@@ -2,7 +2,7 @@
  * @Author: LetMeFly
  * @Date: 2022-01-26 20:05:20
  * @LastEditors: LetMeFly
- * @LastEditTime: 2022-02-03 21:46:25
+ * @LastEditTime: 2022-02-14 20:50:21
  */
 Page({
 
@@ -16,6 +16,21 @@ Page({
         wx.navigateTo({
             url: '/pages/myDiaries/myDiaries',
         })
+    },
+
+    SubscribeAReminder(e) {
+        wx.requestSubscribeMessage({
+            tmplIds: ["WQZmYqg7ZVhDXD5gZyC0VEMtuP2fDVgwcVrScV2mxu0"],
+            success(msg) {
+                console.log(msg);
+            },
+            fail(msg) {
+                wx.showToast({
+                  title: '订阅失败',
+                  icon: "error"
+                })
+            }
+        });
     }
 })
 

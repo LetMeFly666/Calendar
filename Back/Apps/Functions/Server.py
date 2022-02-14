@@ -2,9 +2,10 @@
 Author: LetMeFly
 Date: 2022-02-14 15:47:47
 LastEditors: LetMeFly
-LastEditTime: 2022-02-14 16:47:58
+LastEditTime: 2022-02-14 21:04:28
 '''
 import requests
+import json
 import Secrets
 
 
@@ -26,43 +27,83 @@ def getAccessToken():
     return data["access_token"]
 
 
-def sendAMessage0(userid, date, content, jumpto="MyDairies"):  # FIXME: 名字改回来
+def send1Message(toWho, templateId, data: dict, jumpto=""):
     """
-    发送一次消息提醒
+    推送一次消息给用户
+
     Parameters:
-        userid - 用户的openid
+        toWho - 用户的openid
+        templateId - 模板的template_id
+        data - 要替换的模板中的内容
+            {"date4": {"value": "2022-02-14 16:58"}, "thing1": {"value": "..."}, ...}
+
+    Returns:
+        code - 状态码
+            0 - 发送成功
+            1 - 用户拒收（用户撤销了订阅 或 用户未订阅）
+            2 - 不合法的用户openid
+            -1 - 其他错误
+    """
+    url = f"https://api.weixin.qq.com/cgi-bin/message/subscribe/send?access_token={getAccessToken()}"
+    send_data = {
+        "touser": toWho,
+        "template_id": templateId,
+        "data": data
+    }
+    if jumpto:
+        send_data["page"] = jumpto
+    response = requests.post(url, data=json.dumps(send_data))  # 直接传递dict类型的数据会导致微信服务器解析失败
+    response_data = response.json()
+    print(response_data)  # FIXME: 取消打印
+    errorCode2myCode = {
+        "0": 0,
+        "43101": 1,
+        "40003": 2
+    }
+    code = errorCode2myCode.get(str(response_data["errcode"]), -1)
+    return code
+
+
+
+def send1Message_DiaryReminder(toWho, date, content, jumpto="MyDairies"):
+    """
+    推送一次用户设置的提醒给用户
+
+    Parameters:
+        toWho - 用户的openid
+        date - 提醒时间
         content - 消息内容 （微信要求20字以内，若超过将会被截取为{{前17个字}...}）
         jumpto - 用户点击消息卡片所跳转到的页面，默认我“我的日记页面”
 
     Returns:
-        0 - 发送成功
-        1 - 用户拒绝接受消息
+        code - 状态码
+            0 - 发送成功
+            1 - 用户拒收（用户撤销了订阅 或 用户未订阅）
+            2 - 不合法的用户openid
+            -1 - 其他错误
     """
-    url = f"https://api.weixin.qq.com/cgi-bin/message/subscribe/send?access_token={getAccessToken()}"
 
     data = {
-        "touser": userid,
-        "template_id": Secrets.TEMPLATE_ID,
-        "page": jumpto,
-        "data": {
-            "date4": {  # 日程时间
-                "value": date
-            },
-            "thing2": {  # 提醒内容
-                content if len(content) <= 20 else content[:17] + "..."
-            },
-            "thing11": {  # 备注
-                "value": "你所设定的提醒到时间了呢"
-            }
+        "date4": {  # 日程时间
+            "value": date
+        },
+        "thing2": {  # 提醒内容
+            "value": content if len(content) <= 20 else content[:17] + "..."
+        },
+        "thing11": {  # 备注
+            "value": "你所设定的提醒到时间了呢"
         }
     }
 
-    response = requests.post(url, data=data)
-    print(response.json())
-    return response.json()
+    code = send1Message(toWho=toWho, templateId=Secrets.TEMPLATE_ID_DIARY_REMINDER, data=data, jumpto=jumpto)
+    return code
 
 
-def sendAMessage(reqeust="Temp For url调用"):
-    sendAMessage0()
+def send1Message_Try(reqeust="Temp For url调用"):
+    """
+    发送消息测试函数
+    """
+    code = send1Message_DiaryReminder(toWho=Secrets.USERID_LetMeFly, date="2022-02-14 16:58", content="第一个提醒设置")
     from django.http import HttpResponse
-    return HttpResponse("ok")
+    return HttpResponse("Success!" if code == 0 else "Failed")
+
