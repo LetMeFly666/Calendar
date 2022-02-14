@@ -2,7 +2,7 @@
  * @Author: LetMeFly
  * @Date: 2022-01-27 22:13:45
  * @LastEditors: LetMeFly
- * @LastEditTime: 2022-02-14 21:57:49
+ * @LastEditTime: 2022-02-14 22:34:06
 -->
 # Calendar
 
@@ -198,6 +198,7 @@ Parameters:
 Returns:
     JsonResponse - {"code": 0, "diaries": diaries}
         diaries - [日记1, 日记2, 日记3, ...]
+            日记1 - {"content": 日记内容, "id": 日记id}
 ```
 
 #### getAccessToken

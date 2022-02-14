@@ -2,7 +2,7 @@
 Author: LetMeFly
 Date: 2022-02-03 19:48:13
 LastEditors: LetMeFly
-LastEditTime: 2022-02-13 22:54:35
+LastEditTime: 2022-02-14 22:35:59
 '''
 import Secrets
 import requests
@@ -68,10 +68,14 @@ def getAllDiaries(request):
     Returns:
         JsonResponse - {"code": 0, "diaries": diaries}
             diaries - [日记1, 日记2, 日记3, ...]
+                日记1 - {"content": 日记内容, "id": 日记id}
     """
     userid = request.session.get("userid")
     result = models.diaries.objects.filter(userid=userid)
     diaries = []
     for this_diary in result:
-        diaries.append(this_diary.content)
+        diaries.append({
+            "content": this_diary.content,
+            "id": this_diary.id
+        })
     return JsonResponse({"code": 0, "diaries": diaries}, safe=False)

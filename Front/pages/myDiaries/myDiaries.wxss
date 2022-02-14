@@ -1,1 +1,5 @@
 /* pages/myDiaries/myDiaries.wxss */
+.oneDiaryInDiariesList {
+    margin-top: 10px;
+    /* border-width: 1px; */
+}
