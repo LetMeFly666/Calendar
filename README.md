@@ -2,7 +2,7 @@
  * @Author: LetMeFly
  * @Date: 2022-01-27 22:13:45
  * @LastEditors: LetMeFly
- * @LastEditTime: 2022-02-13 22:57:09
+ * @LastEditTime: 2022-02-14 16:28:02
 -->
 # Calendar
 
@@ -46,7 +46,9 @@
 
 3. 在微信小程序管理平台设置好图标、名称等信息，配置服务器中添加自己的服务器
 
-4. 进入```.\Back\```，创建Secrets.py，在Secrets.py中，配置以下信息
+4. 在微信小程序管理平台选择“功能 -> 订阅消息”，在“公共模板库”中找到“日程提醒”并选用，选择三个“关键词”(“日程时间”、“提醒内容”、“备注”)，“提交”并在“我的模板”中Copy“模板ID”
+
+5. 进入```.\Back\```，创建Secrets.py，在Secrets.py中，配置以下信息
    > SECRET_KEY = 'django-insecure-jafljalfsf*@46s' # 一串随机字符
    >
    > DATABASE_DBNAME = '数据库名称'
@@ -62,6 +64,8 @@
    > APP_ID = '微信小程序的AppID'
    >
    > APP_SECRET = '微信小程序的AppSecret'
+   >
+   > TEMPLATE_ID = '微信消息订阅模板id'
 
 5. （启动mysql服务并)进行初始化```python manage.py makemigrations```、```python manage.py migrate```，之后运行即可(```python manage.py runserver```)
 
@@ -178,6 +182,31 @@ Parameters:
 Returns:
     JsonResponse - {"code": 0, "diaries": diaries}
         diaries - [日记1, 日记2, 日记3, ...]
+```
+
+#### getAccessToken
+
+**url：** 无
+
+**函数：** Apps.Functions.Server.getAccessToken
+
+```
+获取小程序全局唯一后台接口调用凭据（access_token）
+
+Returns:
+    json - 调用结果
+        正常调用 - {"access_token": "ACCESS_TOKEN", "expires_in": 7200} (过期时间当前为2h，后期可能会有所调整)
+        系统繁忙 - {"errcode": 40001, "errmsg": ...}
+```
+
+#### sendAMessage
+
+**url：** 无
+
+**函数：** Apps.Functions.Server.sendAMessage
+
+```
+TODO:
 ```
 
 ### 后端数据库
