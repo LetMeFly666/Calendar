@@ -36,7 +36,7 @@
    > 
    > 1. 配置好了python环境
    >
-   > 2. 安装了django（pip install django）
+   > 2. 安装了django（pip install django）、requests
 
 ### 使用方法
 

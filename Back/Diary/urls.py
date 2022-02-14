@@ -1,3 +1,9 @@
+'''
+Author: LetMeFly
+Date: 2022-02-02 12:22:43
+LastEditors: LetMeFly
+LastEditTime: 2022-02-14 16:12:45
+'''
 """Diary URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
@@ -27,4 +33,5 @@ urlpatterns = [
     path('login/', views.login),
     path('AddADiary/', views.add1diary), 
     path('GetAllDiaries/', views.getAllDiaries),
+    path('temp-getAccessToken/', views.getAccessToken),
 ]
