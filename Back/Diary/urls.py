@@ -2,7 +2,7 @@
 Author: LetMeFly
 Date: 2022-02-02 12:22:43
 LastEditors: LetMeFly
-LastEditTime: 2022-02-14 16:12:45
+LastEditTime: 2022-02-14 16:48:48
 '''
 """Diary URL Configuration
 
@@ -25,6 +25,12 @@ from django.contrib.staticfiles.views import serve
 from django.views.generic.base import RedirectView
 from Apps import views
 
+def tryForResponse(request):
+    import requests
+    response = requests.get("https://www.baidu.com")
+    return response
+
+
 urlpatterns = [
     path('', views.html('index.html')),
     path('admin/', admin.site.urls),
@@ -33,5 +39,5 @@ urlpatterns = [
     path('login/', views.login),
     path('AddADiary/', views.add1diary), 
     path('GetAllDiaries/', views.getAllDiaries),
-    path('temp-getAccessToken/', views.getAccessToken),
+    path("try/", tryForResponse),
 ]
