@@ -2,7 +2,7 @@
  * @Author: LetMeFly
  * @Date: 2022-01-27 22:13:45
  * @LastEditors: LetMeFly
- * @LastEditTime: 2022-02-14 21:07:31
+ * @LastEditTime: 2022-02-14 21:57:49
 -->
 # Calendar
 
@@ -121,6 +121,22 @@ LetMeFly_request({
 ```
 
 **注释：** 服务器接收到微信小程序中的sessionid后，就可以取出session中保存的信息
+
+#### Subscribe1Reminder
+
+**位置：** utils/util.js
+
+**功能：** 让用户订阅一次消息提醒
+
+**示例：**
+
+```javascript
+Subscribe1Reminder();
+
+// （微信小程序将会询问是否订阅）
+```
+
+**注释：** 当前函数仅支持订阅一总类型的消息，即为“日程到期提醒”
 
 ## Back
 

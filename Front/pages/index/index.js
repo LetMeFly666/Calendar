@@ -2,8 +2,10 @@
  * @Author: LetMeFly
  * @Date: 2022-01-26 20:05:20
  * @LastEditors: LetMeFly
- * @LastEditTime: 2022-02-14 20:50:21
+ * @LastEditTime: 2022-02-14 21:53:29
  */
+import { Subscribe1Reminder } from "../../utils/util";
+
 Page({
 
     GotoAddDiaryPage(e) {
@@ -19,18 +21,7 @@ Page({
     },
 
     SubscribeAReminder(e) {
-        wx.requestSubscribeMessage({
-            tmplIds: ["WQZmYqg7ZVhDXD5gZyC0VEMtuP2fDVgwcVrScV2mxu0"],
-            success(msg) {
-                console.log(msg);
-            },
-            fail(msg) {
-                wx.showToast({
-                  title: '订阅失败',
-                  icon: "error"
-                })
-            }
-        });
+        Subscribe1Reminder();
     }
 })
 
