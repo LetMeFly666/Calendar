@@ -2,8 +2,11 @@
 Author: LetMeFly
 Date: 2022-02-14 15:47:47
 LastEditors: LetMeFly
-LastEditTime: 2022-02-14 21:04:28
+LastEditTime: 2022-02-16 00:17:13
 '''
+from os import times
+from Apps import models
+import time
 import requests
 import json
 import Secrets
@@ -54,7 +57,6 @@ def send1Message(toWho, templateId, data: dict, jumpto=""):
         send_data["page"] = jumpto
     response = requests.post(url, data=json.dumps(send_data))  # 直接传递dict类型的数据会导致微信服务器解析失败
     response_data = response.json()
-    print(response_data)  # FIXME: 取消打印
     errorCode2myCode = {
         "0": 0,
         "43101": 1,
@@ -65,7 +67,7 @@ def send1Message(toWho, templateId, data: dict, jumpto=""):
 
 
 
-def send1Message_DiaryReminder(toWho, date, content, jumpto="MyDairies"):
+def send1Message_DiaryReminder(toWho, date, content, jumpto="OneDiary"):
     """
     推送一次用户设置的提醒给用户
 
@@ -106,4 +108,27 @@ def send1Message_Try(reqeust="Temp For url调用"):
     code = send1Message_DiaryReminder(toWho=Secrets.USERID_LetMeFly, date="2022-02-14 16:58", content="第一个提醒设置")
     from django.http import HttpResponse
     return HttpResponse("Success!" if code == 0 else "Failed")
+
+
+def autoCheck2Remind():
+    """
+    自动检测是否有日记应该推送提醒
+    """
+    timeStamp = time.time()
+    timeStamp -= int(timeStamp) % 60  # 减去秒数
+    timeNow = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime(timeStamp))
+    time5minLater = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime(timeStamp + 5 * 60 - 1))  # 应减一，否则整点(5min倍数)日记将会提醒两次
+    result = models.diaries.objects.filter(remind_time__range=[timeNow, time5minLater])
+    for thisDiary in result:
+        send1Message_DiaryReminder(toWho=thisDiary.userid, date=str(thisDiary.remind_time), content=thisDiary.content, jumpto=f"OneDiary?id={thisDiary.id}")
+
+
+def autoCheck2Remind_Try(reqeust="Temp For url调用"):
+    """
+    url测试：检查最近5分钟应当发送的提醒
+    """
+    result = autoCheck2Remind()
+    from django.http import HttpResponse
+    return HttpResponse(result)
+
 

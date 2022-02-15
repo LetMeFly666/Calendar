@@ -2,7 +2,7 @@
 Author: LetMeFly
 Date: 2022-02-02 12:22:43
 LastEditors: LetMeFly
-LastEditTime: 2022-02-14 21:04:30
+LastEditTime: 2022-02-15 21:23:55
 '''
 """Diary URL Configuration
 
@@ -34,5 +34,8 @@ urlpatterns = [
     path('login/', views.login),
     path('AddADiary/', views.add1diary), 
     path('GetAllDiaries/', views.getAllDiaries),
+    path('Get1Diary/', views.get1diary),
+    path('Del1Diary/', views.del1diary),
     path("try/", views.send1Message_Try),
+    path("tryForReminder/", views.autoCheck2Remind_Try),
 ]

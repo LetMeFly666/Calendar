@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'Apps.apps.AppsConfig', 
+    'django_crontab'
 ]
 
 MIDDLEWARE = [
@@ -121,7 +122,7 @@ USE_I18N = True
 
 USE_L10N = True
 
-USE_TZ = True
+USE_TZ = False
 
 
 # Static files (CSS, JavaScript, Images)
@@ -144,3 +145,8 @@ SESSION_SAVE_EVERY_REQUEST = True
 
 # 跨域
 X_FRAME_OPTIONS = 'SAMEORIGIN'
+
+CRONJOBS = [
+    ('*/5 * * * *', 'Apps.views.autoCheck2Remind'),  # 5分钟执行一次
+]
+
