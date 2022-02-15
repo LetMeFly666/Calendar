@@ -1,4 +1,6 @@
 <input placeholder="在此输入要添加的日记" id="content" model:value="{{content}}" bindinput="fakeFunction"/>
+<view>若要设置提醒，请在此输入提醒时间（提醒精度：5min）</view>
+<input placeholder="2022-2-15 22:16:0" id="remindTime" model:value="{{remindTime}}" bindinput="fakeFunction" />
 
 <button type="primary" plain bindtap="AddDiarys">提交</button>
 

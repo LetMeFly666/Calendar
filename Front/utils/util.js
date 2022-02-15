@@ -2,7 +2,7 @@
  * @Author: LetMeFly
  * @Date: 2022-01-23 09:53:58
  * @LastEditors: LetMeFly
- * @LastEditTime: 2022-02-14 21:55:49
+ * @LastEditTime: 2022-02-15 22:40:59
  */
 const formatTime = date => {
     const year = date.getFullYear()
@@ -29,7 +29,7 @@ const LetMeFly_request = (parameter) => {
     wx.request(parameter);
 }
 
-const Subscribe1Reminder = () => {
+const Subscribe1Reminder = (then=null) => {
     /* 让用户订阅一个消息提醒 */
     const tmplIds = ["WQZmYqg7ZVhDXD5gZyC0VEMtuP2fDVgwcVrScV2mxu0"];
     wx.requestSubscribeMessage({
@@ -46,6 +46,9 @@ const Subscribe1Reminder = () => {
                     title: "订阅失败",
                     icon: "error"
                 });
+            }
+            if (then) {
+                then();
             }
         },
         fail(msg) {

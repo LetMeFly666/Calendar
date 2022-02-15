@@ -4,7 +4,8 @@
         "pages/addDiary/addDiary",
         "pages/myDiaries/myDiaries",
         "pages/demo/demo",
-        "pages/logs/logs"
+        "pages/logs/logs",
+        "pages/OneDiary/OneDiary"
     ],
     "window": {
         "backgroundTextStyle": "dark",

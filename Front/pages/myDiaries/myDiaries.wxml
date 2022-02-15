@@ -1,6 +1,6 @@
 <!--pages/myDiaries/myDiaries.wxml-->
 <text>我的日记</text>
 <view wx:for="{{diaries}}" wx:for-item="item" wx:key="*this" data-id="{{item.id}}" class="oneDiaryInDiariesList">
-{{item.content}}
+<navigator url="/pages/OneDiary/OneDiary?id={{item.id}}">{{item.content}}</navigator>
 <view></view>
 </view>

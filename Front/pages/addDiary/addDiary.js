@@ -2,29 +2,52 @@
  * @Author: LetMeFly
  * @Date: 2022-02-03 21:35:46
  * @LastEditors: LetMeFly
- * @LastEditTime: 2022-02-03 22:27:09
+ * @LastEditTime: 2022-02-15 23:51:09
  */
 // pages/addDiary/addDiary.js
 
-import { LetMeFly_request } from "../../utils/util";
+import { LetMeFly_request, Subscribe1Reminder } from "../../utils/util";
 
 Page({
 
     AddDiarys(e) {
-
-        LetMeFly_request({
-            url: 'https://diary.letmefly.xyz/AddADiary/',
-            data: {
+        const getData = () => {
+            const data = {
                 "content": this.data.content
-            },
-            dataType: 'json',
-            method: "POST",
-            success: function() {
-                wx.navigateTo({
-                    url: '/pages/myDiaries/myDiaries',
-                });
+            };
+            if (this.data.remindTime) {
+                data["remindTime"] = this.data.remindTime
             }
-        });
+            return data;
+        }
+
+        if (!(this.data.content)) {
+            wx.showToast({
+              title: '请输入日记内容',
+              icon: 'error'
+            });
+            return ;
+        }
+
+        function sendAndJump() {
+            LetMeFly_request({
+                url: 'https://diary.letmefly.xyz/AddADiary/',
+                data: getData(),
+                dataType: 'json',
+                method: "POST",
+                success: function(msg) {
+                    wx.navigateTo({
+                        url: '/pages/myDiaries/myDiaries',
+                    });
+                }
+            });
+        }
+
+        if (this.data.remindTime) {
+            Subscribe1Reminder(sendAndJump);
+        } else {
+            sendAndJump();
+        }
     },
 
     fakeFunction(e) {
@@ -35,7 +58,8 @@ Page({
      * 页面的初始数据
      */
     data: {
-        content: ""
+        content: "",
+        remindTime: "",
     },
 
     /**

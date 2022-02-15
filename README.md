@@ -2,7 +2,7 @@
  * @Author: LetMeFly
  * @Date: 2022-01-27 22:13:45
  * @LastEditors: LetMeFly
- * @LastEditTime: 2022-02-14 22:34:06
+ * @LastEditTime: 2022-02-16 00:16:33
 -->
 # Calendar
 
@@ -36,7 +36,7 @@
    > 
    > 1. 配置好了python环境
    >
-   > 2. 安装了django（pip install django）、requests
+   > 2. 安装了django（pip install django）、requests、django-crontab
 
 ### 使用方法
 
@@ -67,7 +67,7 @@
    >
    > TEMPLATE_ID_DIARY_REMINDER = '微信消息订阅模板id'
 
-5. （启动mysql服务并)进行初始化```python manage.py makemigrations```、```python manage.py migrate```，之后运行即可(```python manage.py runserver```)
+5. （启动mysql服务并)进行初始化```python manage.py makemigrations```、```python manage.py migrate```、```python manage.py crontab add```，之后运行即可(```python manage.py runserver```)
 
 <font color="#f47920">喜欢了别忘了给个star哦</font>
 
@@ -179,7 +179,9 @@ Parameters:
         json.loads(request.body) - {"content": 要添加的日记的内容}
 
 Returns:
-    JsonResponse - {"code": 0}
+    JsonResponse - {"code": 状态码}
+        0 - 发送成功
+        1 - 内容为空
 ```
 
 #### getAllDiaries
@@ -198,7 +200,49 @@ Parameters:
 Returns:
     JsonResponse - {"code": 0, "diaries": diaries}
         diaries - [日记1, 日记2, 日记3, ...]
-            日记1 - {"content": 日记内容, "id": 日记id}
+            日记1 - {"content": 日记内容, "id": 日记id, "publishTime": 发布时间, "remindTime": 提醒时间}
+```
+
+#### get1diary
+
+**url：** /Get1Diary/
+
+**函数：** Apps.Functions.User.get1diary
+
+```
+获取一个日记
+
+Parameters:
+    request - http request
+        session - session
+        diaryId - 要操作的日记的id
+
+Returns:
+    JsonResponse - http response
+        成功 - {"code": 0, "diary": 日记}
+            日记 - {"content": 日记内容, "id": 日记id, "publishTime": 发布时间, "remindTime": 提醒时间}
+        失败 - {"code": 非0}
+            code - 1 没有权限
+```
+
+#### del1diary
+
+**url：** /Del1Diary/
+
+**函数：** Apps.Functions.User.del1diary
+
+```
+删除一条日记
+
+Parameters:
+    request - http request
+        session - session
+        diaryId - 要操作的日记的id
+
+Returns:
+    code - 状态码
+        0 - 删除成功
+        1 - 没有权限或日记不存在
 ```
 
 #### getAccessToken
@@ -280,5 +324,7 @@ class user(models.Model):
 class diaries(models.Model):
     userid = models.CharField(verbose_name="openid", max_length=40)
     content = models.CharField(verbose_name="日记内容", max_length=1024)
+    publish_time = models.DateTimeField(verbose_name="发布时间", auto_now_add=True)
+    remind_time = models.DateTimeField(verbose_name="提醒时间", null=True)
 ```
 
