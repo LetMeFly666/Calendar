@@ -2,7 +2,7 @@
  * @Author: LetMeFly
  * @Date: 2022-01-27 22:13:45
  * @LastEditors: LetMeFly
- * @LastEditTime: 2022-02-16 12:36:13
+ * @LastEditTime: 2022-02-16 13:53:56
 -->
 {% raw %}
 # Calendar
@@ -72,7 +72,7 @@
 
 5. （启动mysql服务并)进行初始化```python manage.py makemigrations```、```python manage.py migrate```、```python manage.py crontab add```，之后运行即可(```python manage.py runserver```)
 
-<large><font color="#f47920">喜欢了别忘了给个star哦</font></large>
+<large><b><font color="#f47920">喜欢了别忘了给个star哦</font></b></large>
 
 ## Docs
 
