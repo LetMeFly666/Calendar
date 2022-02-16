@@ -18,3 +18,6 @@ commit记录 （2022-2-13 22:51开始）
 5分钟以内时系统将会对用户进行提醒
 
 提交完就有"GET /login/?code=*"疯狂测试，之后还测试了/GetAllDiaries/、/Get1Diary/（像人工测试，因为间隔较久）
+
+
+1. 增加了在线网址 2.jekyll-theme-cayman位于header的对https://fonts.gstatic.com 的引用使得大陆用户需要等待1min左右才能得到访问失败的结果，也就是说即使body已经加载也不会显示。而尝试取消引用gstatic或googleapis失败，因此决定放弃使用更为好看的cayman主题

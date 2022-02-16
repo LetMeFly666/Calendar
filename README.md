@@ -2,7 +2,7 @@
  * @Author: LetMeFly
  * @Date: 2022-01-27 22:13:45
  * @LastEditors: LetMeFly
- * @LastEditTime: 2022-02-16 13:53:56
+ * @LastEditTime: 2022-02-16 13:56:53
 -->
 {% raw %}
 # Calendar
@@ -10,6 +10,10 @@
 微信小程序——默默无闻的日历罢了
 
 <center><img src="Docs/MiniProgramCode.jpg" /></center>
+
+**项目地址：** [https://github.com/LetMeFly666/Calendar](https://github.com/LetMeFly666/Calendar)
+
+**在线文档：** [https://docs.diary.letmefly.xyz/](https://docs.diary.letmefly.xyz/)
 
 ## 配置说明
 
