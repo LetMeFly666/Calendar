@@ -2,9 +2,9 @@
 Author: LetMeFly
 Date: 2022-02-02 12:32:03
 LastEditors: LetMeFly
-LastEditTime: 2022-02-15 21:23:49
+LastEditTime: 2022-02-16 11:48:53
 '''
-from django.shortcuts import render
+from django.shortcuts import (render, redirect)
 
 from Apps.Functions.User import login
 from Apps.Functions.User import add1diary
