@@ -72,7 +72,7 @@
 
 5. （启动mysql服务并)进行初始化```python manage.py makemigrations```、```python manage.py migrate```、```python manage.py crontab add```，之后运行即可(```python manage.py runserver```)
 
-<font color="#f47920">喜欢了别忘了给个star哦</font>
+<large><font color="#f47920">喜欢了别忘了给个star哦</font></large>
 
 ## Docs
 
