@@ -2,7 +2,7 @@
 Author: LetMeFly
 Date: 2022-02-14 15:47:47
 LastEditors: LetMeFly
-LastEditTime: 2022-02-16 00:17:13
+LastEditTime: 2022-02-16 10:32:53
 '''
 from os import times
 from Apps import models
@@ -67,7 +67,7 @@ def send1Message(toWho, templateId, data: dict, jumpto=""):
 
 
 
-def send1Message_DiaryReminder(toWho, date, content, jumpto="OneDiary"):
+def send1Message_DiaryReminder(toWho, date, content, jumpto="pages/OneDiary/OneDiary"):
     """
     推送一次用户设置的提醒给用户
 
@@ -120,7 +120,7 @@ def autoCheck2Remind():
     time5minLater = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime(timeStamp + 5 * 60 - 1))  # 应减一，否则整点(5min倍数)日记将会提醒两次
     result = models.diaries.objects.filter(remind_time__range=[timeNow, time5minLater])
     for thisDiary in result:
-        send1Message_DiaryReminder(toWho=thisDiary.userid, date=str(thisDiary.remind_time), content=thisDiary.content, jumpto=f"OneDiary?id={thisDiary.id}")
+        send1Message_DiaryReminder(toWho=thisDiary.userid, date=str(thisDiary.remind_time), content=thisDiary.content, jumpto=f"pages/OneDiary/OneDiary?id={thisDiary.id}")
 
 
 def autoCheck2Remind_Try(reqeust="Temp For url调用"):
