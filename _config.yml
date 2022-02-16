@@ -1,3 +1,3 @@
-# theme: jekyll-theme-cayman
-theme: jekyll-theme-merlot
+# theme: jekyll-theme-cayman  # 绿色好看，但head中被墙样式文件引起挂起
+theme: jekyll-theme-merlot  # 棕色，有点偏窄
 title: LetMeFly
