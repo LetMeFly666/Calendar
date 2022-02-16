@@ -2,12 +2,14 @@
  * @Author: LetMeFly
  * @Date: 2022-01-27 22:13:45
  * @LastEditors: LetMeFly
- * @LastEditTime: 2022-02-16 11:28:11
+ * @LastEditTime: 2022-02-16 12:36:13
 -->
 {% raw %}
 # Calendar
 
 微信小程序——默默无闻的日历罢了
+
+<center><img src="Docs/MiniProgramCode.jpg" /></center>
 
 ## 配置说明
 
