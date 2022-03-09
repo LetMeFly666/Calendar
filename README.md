@@ -193,7 +193,7 @@ Returns:
 
 #### getAllDiaries
 
-**url：** /AddADiary/
+**url：** /GetAllDiaries/
 
 **函数：** Apps.Functions.User.getAllDiaries
 
