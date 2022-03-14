@@ -5,7 +5,7 @@
                 <textarea maxlength="-1" class="input-area" placeholder="在此输入要添加的日记/提醒" id="content" model:value="{{content}}" bindinput="fakeFunction"/>
                 <view class="contant_wrapB">若要设置提醒，请在此输入提醒时间（提醒精度：5min）</view>
                 <input placeholder="{{remindTime}}" id="remindTime" model:value="{{remindTime}}" bindinput="fakeFunction" />
-                <input placeholder="22:16:0" id="remindTime" model:value="{{remindTime_Hour}}" bindinput="fakeFunction" />
+                <input placeholder="22:16" id="remindTime" model:value="{{remindTime_Hour}}" bindinput="fakeFunction" />
             </view>
         </view>
     </view>
