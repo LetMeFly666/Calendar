@@ -2,7 +2,7 @@
  * @Author: LetMeFly
  * @Date: 2022-01-26 20:05:20
  * @LastEditors: LetMeFly
- * @LastEditTime: 2022-02-14 21:53:29
+ * @LastEditTime: 2022-03-14 19:32:52
  */
 import { Subscribe1Reminder } from "../../utils/util";
 
@@ -24,27 +24,27 @@ Page({
         }),*/
   
         function (event) {
-          let clickDay = event.detail.day;
-          let changeBgColor = `dayStyle[0].color`;
-          let changeBg = `dayStyle[0].background`;
-          let changeDay = `dayStyle[1].day`;
-          let changeEndBg = `dayStyle[1].background`;
-      
-          this.setData({
-            [changeDay]: clickDay,
-            [changeBg]:"rgba(255,255,255,0)",
-            [changeBgColor]:"red",
-            [changeEndBg]: "#00CDCD"
-          })
-
-          console.log(event);
-          wx.navigateTo({
-            url: '/pages/date_detail/date_detail',
-          })
+            let clickDay = event.detail.day;
+            let changeBgColor = `dayStyle[0].color`;
+            let changeBg = `dayStyle[0].background`;
+            let changeDay = `dayStyle[1].day`;
+            let changeEndBg = `dayStyle[1].background`;
+        
+            this.setData({
+                [changeDay]: clickDay,
+                [changeBg]:"rgba(255,255,255,0)",
+                [changeBgColor]:"red",
+                [changeEndBg]: "#00CDCD"
+            })
+  
+            console.log(event);
+            wx.navigateTo({
+                url: '/pages/date_detail/date_detail',
+            })
   
         },
   
-      onLoad: function () { },
+    onLoad: function () { },
 
     GotoAddDiaryPage(e) {
         wx.navigateTo({
