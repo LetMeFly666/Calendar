@@ -1,11 +1,11 @@
 /**app.wxss**/
   
-  page{
+page{
     /*定义主题颜色*/
     --themeColor1:#00CDCD;
     --themeColor2:#1296db;
     font-size: 28rpx;
-    }
+}
   
 .container {
     height: 100%;

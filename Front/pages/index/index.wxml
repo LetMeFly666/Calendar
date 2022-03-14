@@ -7,13 +7,12 @@
     binddayClick="dayClick"
     lunaar="{{true}}"
     header-style="header"
-    board-style="board"
-    />
+    board-style="board" />
     
 <!-- <view class="container">
-  <image src='../image/1.jpg'></image>
-  <view class='up'>
-    我是一串字符串
-  </view>
+    <image src='../image/1.jpg'></image>
+    <view class='up'>
+        我是一串字符串
+    </view>
 </view> -->
 
