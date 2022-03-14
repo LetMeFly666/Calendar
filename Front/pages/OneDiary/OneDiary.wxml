@@ -1,9 +1,9 @@
 <!--pages/OneDiary/OneDiary.wxml-->
 <!-- {{id}} -->
-<view>{{content}}</view>
-<view></view>
-<view>发布时间：{{publishTime}}</view>
-<view></view>
-<view wx:if="{{remindTime}}">提醒时间{{remindTime}}</view>
+<view class="container">
+    <view class="textclassA">{{content}}</view>
+</view>
+<view class="textclassC">发布时间：{{publishTime}}</view>
+<view class="textclassC" wx:if="{{remindTime}}">提醒时间{{remindTime}}</view>
 
-<button type="warn" plain bindtap="deleteThisDiary">删除日记</button>
+<button class="button" type="warn" plain bindtap="deleteThisDiary">删除日记</button>

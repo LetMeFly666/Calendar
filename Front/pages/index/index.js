@@ -7,6 +7,44 @@
 import { Subscribe1Reminder } from "../../utils/util";
 
 Page({
+    data: {
+        dayStyle: [
+          {month: 'current', day: new Date().getDate(), color: 'red', background: '#00CDCD'},
+          { month: 'current', day: new Date().getDate(), color: 'white', background: '#00CDCD' }
+        ],
+      },
+      
+     
+      //给点击的日期设置一个背景颜色
+      dayClick:
+  
+        /*wx.setNavigationBarColor({
+          backgroundColor: 'backgroundColor',
+          frontColor: 'frontColor',
+        }),*/
+  
+        function (event) {
+          let clickDay = event.detail.day;
+          let changeBgColor = `dayStyle[0].color`;
+          let changeBg = `dayStyle[0].background`;
+          let changeDay = `dayStyle[1].day`;
+          let changeEndBg = `dayStyle[1].background`;
+      
+          this.setData({
+            [changeDay]: clickDay,
+            [changeBg]:"rgba(255,255,255,0)",
+            [changeBgColor]:"red",
+            [changeEndBg]: "#00CDCD"
+          })
+
+          console.log(event);
+          wx.navigateTo({
+            url: '/pages/date_detail/date_detail',
+          })
+  
+        },
+  
+      onLoad: function () { },
 
     GotoAddDiaryPage(e) {
         wx.navigateTo({
@@ -23,6 +61,9 @@ Page({
     SubscribeAReminder(e) {
         Subscribe1Reminder();
     }
+
+    
+    
 })
 
 

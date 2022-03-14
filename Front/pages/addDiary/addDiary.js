@@ -59,7 +59,8 @@ Page({
      */
     data: {
         content: "",
-        remindTime: "",
+        remindTime: "2022-2-15",
+        remindTime_Hour: ""
     },
 
     /**
