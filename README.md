@@ -2,7 +2,7 @@
  * @Author: LetMeFly
  * @Date: 2022-01-27 22:13:45
  * @LastEditors: LetMeFly
- * @LastEditTime: 2022-02-16 13:56:53
+ * @LastEditTime: 2022-03-14 20:06:27
 -->
 {% raw %}
 # Calendar
@@ -334,5 +334,9 @@ class diaries(models.Model):
     publish_time = models.DateTimeField(verbose_name="发布时间", auto_now_add=True)
     remind_time = models.DateTimeField(verbose_name="提醒时间", null=True)
 ```
+
+## TODO
+
+<code>icon</code> 和 <code>source/Img</code>重复性冗余，待整合
 
 {% endraw %}
