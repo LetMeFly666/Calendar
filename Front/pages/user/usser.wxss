@@ -25,7 +25,7 @@ page{
     
     .username {
         color: #000000;
-        font-size: 20px;
+        font-size: 18px;
         font-weight: bold;
         width: 320rpx;
         height: 120px;

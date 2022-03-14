@@ -1,16 +1,18 @@
 /* pages/addDiary/addDiary.wxss */
 page{
-    background-color:white;
+    background-color:#fff;
 }
 
  
 .contant_wrapA{
     margin-top: 50rpx;
-    background-color: #fff;
+    background-color: rgb(231, 230, 230);
 }
 .contant_wrapB{
     margin-top: 70rpx;
-    background-color: #fff;
+    margin-left: 30rpx;
+    margin-right: 30rpx;
+    background-color:  rgb(231, 230, 230);
 }
 .contant{
     width: 90%;
