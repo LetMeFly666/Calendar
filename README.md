@@ -341,4 +341,6 @@ class diaries(models.Model):
 
 <code>user/usser</code>误拼
 
+发行版<code>pages/user/usser</code>页面不能获取用户头像和昵称
+
 {% endraw %}
