@@ -25,14 +25,14 @@
             {
                 "pagePath": "pages/index/index",
                 "text": "首页",
-                "iconPath": "icon/home.png",
-                "selectedIconPath": "icon/home (1).png"
+                "iconPath": "/source/Img/home.png",
+                "selectedIconPath": "/source/Img/home (1).png"
               },
             {
                 "pagePath": "pages/user/usser",
                 "text": "个人",
-                "iconPath": "icon/bussiness-man.png",
-                "selectedIconPath": "icon/bussiness-man (1).png"
+                "iconPath": "/source/Img/bussiness-man.png",
+                "selectedIconPath": "/source/Img/bussiness-man (1).png"
               }
         ]
     },

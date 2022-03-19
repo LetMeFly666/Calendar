@@ -16,11 +16,11 @@
         <view style="width:100%">
             <view class="functioninformation">
                 <view class="licon">
-                <image class="icon-picture" src="/icon/more.png"></image>
+                <image class="icon-picture" src="/source/Img/more.png"></image>
                 </view>
                 <view class="text">意见反馈</view>
                 <view class="ricon">
-                <image class="icon-picture" src="/icon/arrow-right.png"></image>
+                <image class="icon-picture" src="/source/Img/arrow-right.png"></image>
                 </view>
             </view>
         </view>
