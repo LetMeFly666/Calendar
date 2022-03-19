@@ -2,7 +2,7 @@
  * @Author: LetMeFly
  * @Date: 2022-01-27 22:13:45
  * @LastEditors: LetMeFly
- * @LastEditTime: 2022-03-14 20:32:12
+ * @LastEditTime: 2022-03-19 18:36:04
 -->
 {% raw %}
 # Calendar
@@ -337,10 +337,10 @@ class diaries(models.Model):
 
 ## TODO
 
-<code>icon</code> 和 <code>source/Img</code>重复性冗余，待整合
+- [ ] <code>icon</code> 和 <code>source/Img</code>重复性冗余，待整合
 
-<code>user/usser</code>误拼
+- [ ] <code>user/usser</code>误拼
 
-发行版<code>pages/user/usser</code>页面不能获取用户头像和昵称
+- [ ] 发行版<code>pages/user/usser</code>页面不能获取用户头像和昵称
 
 {% endraw %}
