@@ -1,0 +1,41 @@
+<!--用户头像和昵称-->
+<view class="userInformation">
+    <view class="userpicture">
+        <open-data type="userAvatarUrl" ></open-data>
+    </view>
+    <view class="username">
+        <open-data type="userNickName"></open-data>
+    </view>
+</view>
+
+<!-- <view class="userInformation">
+    <block wx:if="{{!hasUserInfo}}">
+        <button wx:if="{{canIUseGetUserProfile}}" bindtap="getUserProfile"> 获取头像昵称 </button>
+        <button wx:else open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
+    </block>
+    <block wx:else>
+        <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+        <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+    </block>
+</view> -->
+
+<!-- 灰条
+<view class="huitiao"></view> -->
+<!--意见反馈-->
+<button class='button' plain open-type="feedback">
+    <view class='function'>
+        <view style="width:100%">
+            <view class="functioninformation">
+                <view class="licon">
+                <image class="icon-picture" src="/source/Img/more.png"></image>
+                </view>
+                <view class="text">意见反馈</view>
+                <view class="ricon">
+                <image class="icon-picture" src="/source/Img/arrow-right.png"></image>
+                </view>
+            </view>
+        </view>
+    </view>
+</button>
+
+

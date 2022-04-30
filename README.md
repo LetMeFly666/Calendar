@@ -2,9 +2,10 @@
  * @Author: LetMeFly
  * @Date: 2022-01-27 22:13:45
  * @LastEditors: LetMeFly
- * @LastEditTime: 2022-02-16 13:56:53
+ * @LastEditTime: 2022-03-19 19:46:07
 -->
 {% raw %}
+
 # Calendar
 
 微信小程序——默默无闻的日历罢了
@@ -334,5 +335,19 @@ class diaries(models.Model):
     publish_time = models.DateTimeField(verbose_name="发布时间", auto_now_add=True)
     remind_time = models.DateTimeField(verbose_name="提醒时间", null=True)
 ```
+
+## TODO
+
+- [ ] <code>icon</code> 和 <code>source/Img</code>重复性冗余，待整合
+
+- [ ] <code>user/usser</code>误拼
+
+- [ ] 发行版<code>pages/user/usser</code>页面不能获取用户头像和昵称。自21年起就不能直接获取用户头像和信息了，必须使用wx.getUserProfile来获取。但是wx.getUserProfile每次调用都需要弹窗获得用户的同意，除非获取一次后就把头像、昵称保存到服务器。这就需要增加不少的后端代码。我猜，这就是为什么很多小程序头像都是失效图片的原因吧。
+
+- [ ] 从“我的日记”页面进入一个日记并日记后会跳转到新的“我的日记”页面，新的“我的日记”页面不会展示刚刚删除的日记。但是如果用户点击两次“返回”，就会先返回到刚刚删除日记的那个页面，然后再次返回就会回到删除日记之前的“我的日记”页面。这个页面中的日记仍会显示，若用户再次点击此条日记就会访问一条已经删除的日记儿出现错误。
+
+- [x] “我的日记”页面的内容应该以时间为依据倒序显示，即最新发布的最前。
+
+- [x] 采用自定义url的图片，不修改源码可实现背景图片的更换
 
 {% endraw %}

@@ -1,3 +1,6 @@
 {
-    
-}
+    "usingComponents": {
+        "calendar": "plugin://calendar/calendar"
+    },
+    "navigationBarTitleText": "默默无闻的日历罢了"
+  }

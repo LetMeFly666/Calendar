@@ -1,0 +1,31 @@
+<!--pages/date_detail/date_detail.wxml-->
+<!--<view class="opinion_wrap">
+    <view class="wrap">
+        <form bindsubmit="formSubmit">
+            <view class="contant_wrap">
+                <view class="contant">
+                    <textarea name="opinion"   value="{{contact}}" auto-height placeholder-class="placeholder" placeholder="日记" />
+                </view>
+            </view>
+
+            <view class="contant_wrap">
+                <view class="contant">
+                    <textarea name="opinion"   value="{{contact}}" auto-height placeholder-class="placeholder" placeholder="提醒" />
+                </view>
+            </view>
+            <button formType="submit" hover-class="none" loading="{{loading}}">保存</button>
+        </form>
+    </view>
+</view>-->
+<!--<button type="primary" plain bindtap="GotoAddDiaryPage">添加日记</button>
+<button type="primary" plain bindtap="GotoMyDiariesPage">我的日记</button>
+<button type="primary" plain bindtap="SubscribeAReminder">订阅提醒</button> -->
+<!-- <button type="primary" plain open-type="getUserInfo" bindgetuserinfo="handleGetUserInfo">登录</button> -->
+    <button  plain bindtap="GotoAddDiaryPage"><view>添加日记/提醒</view><!--文字--></button>
+    <button  plain bindtap="GotoMyDiariesPage" ><view>我的日记</view><!--文字--></button>
+    <button  plain bindtap="SubscribeAReminder" ><view>订阅提醒</view><!--文字--></button>
+
+
+<!-- <button type="primary" plain bindtap="GotoMyDiariesPage">我的日记</button>
+<button type="primary" plain bindtap="GotoAddDiaryPage">添加日记</button>
+<button type="primary" plain bindtap="SubscribeAReminder">订阅提醒</button> -->

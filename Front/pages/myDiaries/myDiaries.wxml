@@ -1,6 +1,12 @@
 <!--pages/myDiaries/myDiaries.wxml-->
-<text>我的日记</text>
-<view wx:for="{{diaries}}" wx:for-item="item" wx:key="*this" data-id="{{item.id}}" class="oneDiaryInDiariesList">
-<navigator url="/pages/OneDiary/OneDiary?id={{item.id}}">{{item.content}}</navigator>
-<view></view>
-</view>
+<text class="textclassB">我的日记</text>
+    <view class="textclassA">
+        <view wx:for="{{diaries}}" wx:for-item="item" wx:key="*this" data-id="{{item.id}}" class="oneDiaryInDiariesList">
+
+            <navigator url="/pages/OneDiary/OneDiary?id={{item.id}}">
+            <view class="textclassC">{{item.publishTime}}</view>
+            <view class="textclassC" wx:if="{{item.remindTime}}">{{item.remindTime}}</view>
+            {{item.content}}
+            </navigator>
+        </view>
+    </view>

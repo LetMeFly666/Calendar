@@ -1,4 +1,18 @@
-<button type="primary" plain bindtap="GotoMyDiariesPage">我的日记</button>
-<button type="primary" plain bindtap="GotoAddDiaryPage">添加日记</button>
-<button type="primary" plain bindtap="SubscribeAReminder">订阅提醒</button>
-<!-- <button type="primary" plain open-type="getUserInfo" bindgetuserinfo="handleGetUserInfo">登录</button> -->
+<calendar
+    show-more-days='{{true}}'
+    start-date="2018-01"
+    end-date="2099-12"
+    week-type="cn"
+    days-color="{{dayStyle}}"
+    binddayClick="dayClick"
+    lunaar="{{true}}"
+    header-style="header"
+    board-style="board" />
+    
+<!-- <view class="container">
+    <image src='../image/1.jpg'></image>
+    <view class='up'>
+        我是一串字符串
+    </view>
+</view> -->
+

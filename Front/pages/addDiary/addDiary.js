@@ -2,7 +2,7 @@
  * @Author: LetMeFly
  * @Date: 2022-02-03 21:35:46
  * @LastEditors: LetMeFly
- * @LastEditTime: 2022-02-15 23:51:09
+ * @LastEditTime: 2022-03-14 19:55:08
  */
 // pages/addDiary/addDiary.js
 
@@ -15,8 +15,8 @@ Page({
             const data = {
                 "content": this.data.content
             };
-            if (this.data.remindTime) {
-                data["remindTime"] = this.data.remindTime
+            if (this.data.remindTime_Hour) {
+                data["remindTime"] = this.data.remindTime + " " + this.data.remindTime_Hour;
             }
             return data;
         }
@@ -43,7 +43,7 @@ Page({
             });
         }
 
-        if (this.data.remindTime) {
+        if (this.data.remindTime_Hour) {
             Subscribe1Reminder(sendAndJump);
         } else {
             sendAndJump();
@@ -59,14 +59,17 @@ Page({
      */
     data: {
         content: "",
-        remindTime: "",
+        remindTime: "2022-2-15",
+        remindTime_Hour: ""
     },
 
     /**
      * 生命周期函数--监听页面加载
      */
     onLoad: function (options) {
-
+        this.setData({
+            remindTime: this.options.date
+        });
     },
 
     /**

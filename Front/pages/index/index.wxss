@@ -1,3 +1,18 @@
 button {
     margin-top: 5px;
 }
+.header {
+    font-size: large;
+    color: #000000;   
+}
+.board {
+    color: #000000;    
+    font-weight: bold;
+}
+page{
+    /* background-image: url(http://r.photo.store.qq.com/psc?/V11RzZxr3t92NO/45NBuzDIW489QBoVep5mcabng7zFoAGtvGOLKY.58cNsCJrYhv2OKlUV0xCDcJdp74TT8Au.a9hoKOrAjogevWvOg0fEHLd8sgdcXSYEdw0!/r); */
+    background-image: url(https://LetMeFly666.github.io/FileStorge/Files/Pictures/Pic_Calendar_indexBackground_01.jfif);
+    background-size: 100% 100%;
+
+    /* background-color: #fff; */
+}

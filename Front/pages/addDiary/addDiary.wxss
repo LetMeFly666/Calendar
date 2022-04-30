@@ -1,1 +1,31 @@
 /* pages/addDiary/addDiary.wxss */
+page{
+    background-color:#fff;
+}
+
+ 
+.contant_wrapA{
+    margin-top: 50rpx;
+    background-color: rgb(231, 230, 230);
+}
+.contant_wrapB{
+    margin-top: 70rpx;
+    margin-left: 30rpx;
+    margin-right: 30rpx;
+    background-color:  rgb(231, 230, 230);
+}
+.contant{
+    width: 90%;
+    font-size: 10pt;
+    margin: 0 auto
+}
+textarea{
+    min-height: 350rpx;
+    padding: 10rpx ;
+    width: 100%;
+    background-color: white;
+}
+
+button{
+    margin-top: 70rpx;
+}

@@ -1,0 +1,15 @@
+/* pages/date_detail/date_detail.wxss */
+page{
+    /* background-image: url(http://r.photo.store.qq.com/psc?/V11RzZxr3t92NO/45NBuzDIW489QBoVep5mcabng7zFoAGtvGOLKY.58cMHQs3tkyTN226OtiMYOyI8bIp4Ow6AnccA0LLdQQ5bCKmYd7jYxr96hDjBRHu8GWE!/r); */
+    background-image: url(https://LetMeFly666.github.io/FileStorge/Files/Pictures/Pic_Calendar_userBackground_01.jfif);
+    background-size: 100% 100%;
+
+    /* background-color: #fff; */
+}
+
+button{
+    margin-top: 70rpx;
+}
+/*button {margin-top: 5px;}*/
+
+

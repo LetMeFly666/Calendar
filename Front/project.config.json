@@ -48,8 +48,7 @@
     },
     "compileType": "miniprogram",
     "libVersion": "2.19.4",
-    "appid": "wxdf746a737c710aeb",
-    "projectname": "%E9%BB%98%E9%BB%98%E6%97%A0%E9%97%BB%E7%9A%84%E6%97%A5%E5%8E%86%E7%BD%A2%E4%BA%86",
+    "projectname": "Calendar",
     "debugOptions": {
         "hidedInDevtools": []
     },
@@ -59,6 +58,7 @@
         "servePath": ""
     },
     "isGameTourist": false,
+    "appid": "wxdf746a737c710aeb",
     "condition": {
         "search": {
             "list": []

@@ -1,39 +1,49 @@
 {
     "pages": [
-        "pages/index/index",
-        "pages/addDiary/addDiary",
         "pages/myDiaries/myDiaries",
+        "pages/index/index",
+        "pages/user/usser",
+        "pages/date_detail/date_detail",
+        "pages/addDiary/addDiary",        
         "pages/demo/demo",
         "pages/logs/logs",
         "pages/OneDiary/OneDiary"
     ],
     "window": {
-        "backgroundTextStyle": "dark",
-        "navigationBarBackgroundColor": "#fff",
-        "navigationBarTitleText": "日记",
+        "backgroundTextStyle": "light",
+        "navigationBarBackgroundColor": "#00CDCD",
+        "navigationBarTitleText": "默默无闻的日历罢了",
         "navigationBarTextStyle": "black",
         "enablePullDownRefresh": true
     },
     "tabBar": {
-        "color": "black",
-        "selectedColor": "#1aad19",
-        "backgroundColor": "white",
+        "color": "#999",
+        "selectedColor": "#00CDCD",
+        "backgroundColor": "#fafafa",
+        "borderStyle": "black",
         "list": [
             {
                 "pagePath": "pages/index/index",
-                "iconPath": "source/Img/MainPage.png",
-                "selectedIconPath": "source/Img/MainPage_Selected.png",
-                "text": "主页"
-            },
+                "text": "首页",
+                "iconPath": "/source/Img/home.png",
+                "selectedIconPath": "/source/Img/home (1).png"
+              },
             {
-                "pagePath": "pages/demo/demo",
-                "iconPath": "source/Img/Person.png",
-                "selectedIconPath": "source/Img/Person_Selected.png",
-                "text": "个人"
-            }
+                "pagePath": "pages/user/usser",
+                "text": "个人",
+                "iconPath": "/source/Img/bussiness-man.png",
+                "selectedIconPath": "/source/Img/bussiness-man (1).png"
+              }
         ]
     },
     "style": "v2",
     "sitemapLocation": "sitemap.json",
-    "entryPagePath": "pages/index/index"
+    "entryPagePath": "pages/index/index",
+    
+    "plugins": {
+        "calendar": {
+            "version": "1.1.3",
+            "provider": "wx92c68dae5a8bb046"
+        }
+    }
 }

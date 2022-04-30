@@ -2,7 +2,7 @@
  * @Author: LetMeFly
  * @Date: 2022-02-03 21:44:21
  * @LastEditors: LetMeFly
- * @LastEditTime: 2022-02-03 23:35:08
+ * @LastEditTime: 2022-03-19 19:03:19
  */
 // pages/myDiaries/myDiaries.js
 
@@ -25,12 +25,12 @@ Page({
         LetMeFly_request({
             url: 'https://diary.letmefly.xyz/GetAllDiaries/',
             success: function(msg) {
-                console.log(msg);
                 const { diaries } = msg.data;
                 _this.setData({
-                    diaries: diaries
-                });
-
+                    diaries: diaries.sort(function(a, b) {
+                        return a.publishTime > b.publishTime ? -1 : 1;
+                    })
+                }); 
             }
         });
         // this.setData({diaries: ["4545", "6545"]})
