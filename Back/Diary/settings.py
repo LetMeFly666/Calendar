@@ -147,6 +147,6 @@ SESSION_SAVE_EVERY_REQUEST = True
 X_FRAME_OPTIONS = 'SAMEORIGIN'
 
 CRONJOBS = [
-    ('*/5 * * * *', 'Apps.views.autoCheck2Remind'),  # 5分钟执行一次
+    ('*/5 * * * *', 'Apps.views.autoCheck2Remind > &1'),  # 5分钟执行一次
 ]
 
